@@ -4,7 +4,11 @@
 </div>
 
 <p align="center">
-    <strong>A repo template that gives AI coding agents a simple, repeatable way to plan and implement changes — and to remember what they learned.</strong>
+    <strong><code>/describe-project</code> once&nbsp;&nbsp;·&nbsp;&nbsp;then <code>/analyze</code> → <code>/implement</code>, forever</strong>
+</p>
+
+<p align="center">
+    A repo template that gives AI coding agents a simple, repeatable way to plan and implement changes — and to remember what they learned.
 </p>
 
 <p align="center">
@@ -13,14 +17,40 @@
 
 ---
 
-## 🤔 What is this?
+## ⚡ The whole workflow is three commands
+
+```mermaid
+flowchart LR
+    A("🪶 /describe-project<br/><i>tell it what you're building</i><br/><b>once</b>") --> B("🔍 /analyze &lt;your idea&gt;<br/><i>it writes a reviewable plan</i><br/><b>docs/tasks/T001.md</b>")
+    B --> C("🚀 /implement T001<br/><i>code · verify · document · commit</i><br/><b>task deleted, knowledge kept</b>")
+    C -. "every next change" .-> B
+    style A fill:#1a7f37,stroke:#1a7f37,color:#fff
+    style B fill:#0969da,stroke:#0969da,color:#fff
+    style C fill:#8250df,stroke:#8250df,color:#fff
+```
+
+In practice it looks like this:
+
+```text
+/describe-project                        # once — answer a few questions, docs get filled in
+
+/analyze add a --tag filter to list      # → writes a plan you can read: docs/tasks/T001_tag_filter.md
+/implement T001                          # → code ✓  tests ✓  docs updated ✓  committed ✓
+
+/analyze support exporting to JSON       # ...and around again. Same two commands, forever.
+/implement T002
+```
+
+**That's it.** You review the plan between the two commands — running `/implement` *is* the approval. Everything the agent learns gets distilled into a handful of docs it re-reads next session, so it never starts from zero again. The rest of this README is just the details.
+
+## 🤔 Why does this exist?
 
 AI agents are good at writing code and bad at remembering *why* the code looks the way it does. Every new session starts from zero, so they re-discover the same architecture, re-make the same decisions, and sometimes contradict what was decided last week.
 
 This template fixes that with three things:
 
 1. **A rulebook the agent reads first** — [`AGENTS.md`](AGENTS.md) tells any agent (Claude Code, Cursor, Codex, Copilot, Aider, …) how work is classified, what to read before coding, and where to write down what it learned.
-2. **Three slash commands** — `/describe-project` (fill in the docs once), `/analyze` (plan a change), `/implement` (build it, verify it, document it, commit it).
+2. **The three slash commands above** — plan, build, remember. Each one knows which docs to read and which to update.
 3. **A tiny set of durable docs** — `docs/architecture.md` for cross-cutting decisions and one `docs/domains/<area>.md` per feature area. Nothing else accumulates: task files are local scratch that gets deleted when the work is done.
 
 It is **stack-agnostic**. The template ships no code, no dependencies, and no build config — only Markdown and agent skills. The same workflow drives a web app, a CLI, a desktop app, a library, or firmware.
