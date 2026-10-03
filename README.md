@@ -20,12 +20,12 @@
 ## ⚡ The whole workflow is three commands
 
 ```text
-/describe-project notes, a CLI in Go     # once — it asks what's missing, docs get filled in
+/describe-project a recipe sharing web app    # once — it asks what's missing, docs get filled in
 
-/analyze add full-text search            # → writes a plan you can read: docs/tasks/T001_full_text_search.md
-/implement T001                          # → code ✓  tests ✓  docs updated ✓  committed ✓
+/analyze add search by ingredient             # → a plan you can read: docs/tasks/T001_ingredient_search.md
+/implement T001                               # → code ✓  tests ✓  docs updated ✓  committed ✓
 
-/analyze sync notes between devices      # ...and around again. Same two commands, forever.
+/analyze let users rate recipes 1–5 stars     # ...and around again. Same two commands, forever.
 /implement T002
 ```
 
