@@ -22,10 +22,10 @@
 ```text
 /describe-project                        # once — answer a few questions, docs get filled in
 
-/analyze add a --tag filter to list      # → writes a plan you can read: docs/tasks/T001_tag_filter.md
+/analyze add full-text search            # → writes a plan you can read: docs/tasks/T001_full_text_search.md
 /implement T001                          # → code ✓  tests ✓  docs updated ✓  committed ✓
 
-/analyze support exporting to JSON       # ...and around again. Same two commands, forever.
+/analyze sync notes between devices      # ...and around again. Same two commands, forever.
 /implement T002
 ```
 
@@ -138,7 +138,7 @@ Committed: a1b2c3d feat: scaffold cli and file-backed store
 From here on, every change is the same two commands:
 
 ```
-/analyze add a --tag filter to the list command
+/analyze add tagging — create tags and filter notes by them
 /implement T002
 ```
 
