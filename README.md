@@ -20,7 +20,7 @@
 ## ⚡ The whole workflow is three commands
 
 ```text
-/describe-project                        # once — answer a few questions, docs get filled in
+/describe-project notes, a CLI in Go     # once — it asks what's missing, docs get filled in
 
 /analyze add full-text search            # → writes a plan you can read: docs/tasks/T001_full_text_search.md
 /implement T001                          # → code ✓  tests ✓  docs updated ✓  committed ✓
