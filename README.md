@@ -19,18 +19,6 @@
 
 ## ⚡ The whole workflow is three commands
 
-```mermaid
-flowchart LR
-    A("🪶 /describe-project<br/><i>tell it what you're building</i><br/><b>once</b>") --> B("🔍 /analyze &lt;your idea&gt;<br/><i>it writes a reviewable plan</i><br/><b>docs/tasks/T001.md</b>")
-    B --> C("🚀 /implement T001<br/><i>code · verify · document · commit</i><br/><b>task deleted, knowledge kept</b>")
-    C -. "every next change" .-> B
-    style A fill:#1a7f37,stroke:#1a7f37,color:#fff
-    style B fill:#0969da,stroke:#0969da,color:#fff
-    style C fill:#8250df,stroke:#8250df,color:#fff
-```
-
-In practice it looks like this:
-
 ```text
 /describe-project                        # once — answer a few questions, docs get filled in
 
